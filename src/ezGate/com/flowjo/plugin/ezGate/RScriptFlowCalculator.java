@@ -1,6 +1,4 @@
-package com.flowjo.plugin.ezDAFi;
-
-/*
+package com.flowjo.plugin.ezGate;/*
     Modified: MiguelV
     Date:   Nov th 2017
     Description:
@@ -12,7 +10,6 @@ package com.flowjo.plugin.ezDAFi;
     Speed and depecration.
  */
 
-import java.awt.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -178,7 +175,7 @@ public class RScriptFlowCalculator extends RFlowCalculator {
             return false;
         String last = path.substring(path.lastIndexOf(File.separator), path.length());
         last = last.toLowerCase();
-        return last.endsWith("r.exe") || last.endsWith("rscript.exe");
+        return last.endsWith("com.flowjo.plugin.ezGate.com.flowjo.plugin.ezGate.r.exe") || last.endsWith("rscript.exe");
     }
 
     public static boolean endswithRUNIX(String path) {
@@ -186,7 +183,7 @@ public class RScriptFlowCalculator extends RFlowCalculator {
             return false;
         String last = path.substring(path.lastIndexOf(File.separator), path.length());
         last = last.toLowerCase();
-        return last.endsWith("r") || last.endsWith("rscript");
+        return last.endsWith("src/ezGate/com.flowjo.plugin.ezGate.r") || last.endsWith("rscript");
     }
 
     private boolean checkRExecutable(File rPath) {
@@ -210,7 +207,7 @@ public class RScriptFlowCalculator extends RFlowCalculator {
             if (fRScriptMode) {
                 if (rPath.endsWith("R.exe")) {
                     rPath = rPath.replaceAll("R.exe", "Rscript.exe");
-                } else if (rPath.endsWith("r.exe")) {
+                } else if (rPath.endsWith("com.flowjo.plugin.ezGate.com.flowjo.plugin.ezGate.r.exe")) {
                     rPath = rPath.replaceAll("r.exe", "Rscript.exe");
                 }
             } else {
@@ -235,7 +232,7 @@ public class RScriptFlowCalculator extends RFlowCalculator {
                     }
                 } else {
                     if (rPath.endsWith("script")) {
-                        rPath = rPath.replaceAll("rscript", "r");
+                        rPath = rPath.replaceAll("rscript", "src/ezGate/com.flowjo.plugin.ezGate.r");
                     }
                 }
             }
